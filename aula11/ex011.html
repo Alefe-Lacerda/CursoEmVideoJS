@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DE QUE PAÍS VC É?</title>
+</head>
+<body>
+    <h1>Verificação de países</h1>
+    De qual país vc é? <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificaGringo()">
+    <div id="resultado"></div>
+    <script>
+        var nacionalidade = document.getElementById('pais')
+        var resultado = document.getElementById('resultado')
+        function verificaGringo(){
+            if (nacionalidade.value == 'Brasil'){
+                resultado.innerHTML = `Falaê meu parça brazuca!`
+            }
+            else{
+                resultado.innerHTML = `Caspa fora daqui, gringo!`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <h2>A velocidade máxima é 60km/h</h2>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar"  onclick="verificarMulta()">
+    <div id="mensagem">A verificar velocidade...</div>
+    <script>
+        function verificarMulta(){
+            //1. Validar velocidade do carro como um número
+            var velocidade = window.document.getElementById('txtvel')
+            var vel = Number(velocidade.value)
+            var mensagem = window.document.getElementById('mensagem')
+            //2. Comparar com a velocidade máxima e escrever na tela se sim ou se não
+            if (vel > 120) {
+                mensagem.innerHTML = `Você está acima da velocidade, tomou multa! Sua velocidade é ${vel}km/h e sua multa é gravíssima!`
+            }
+            else if (vel > 80){
+                mensagem.innerHTML = `Você está acima da velocidade, tomou multa! Sua velocidade é ${vel}km/h e sua multa é grave!`
+            }
+            else if (vel > 60){
+                mensagem.innerHTML = `Você está acima da velocidade, tomou multa! Sua velocidade é ${vel}km/h!`
+            }
+            else{
+                mensagem.innerHTML = `Tudo certo por aqui. Sua velocidade é ${vel}`
+            }
+        } 
+    </script>
+</body>
+</html>
